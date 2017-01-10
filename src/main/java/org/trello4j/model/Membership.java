@@ -4,23 +4,14 @@ package org.trello4j.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Membership {
+public class Membership extends TrelloObject {
 
-    private String id;
     private String idMember;
     private String memberType;
     private Boolean unconfirmed;
     private Boolean deactivated;
     private String orgMemberType;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getIdMember() {
         return idMember;
