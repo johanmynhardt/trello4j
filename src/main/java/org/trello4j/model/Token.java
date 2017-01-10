@@ -7,183 +7,78 @@ import java.util.Date;
  */
 public class Token extends TrelloObject {
 
-	/**
-	 * <code>
-	 * {
-	 * "id": "4ee7f1e00081da1fcb00014b",
-	 * "idMember": "4ee7df3ce582acdec80000b2",
-	 * "dateCreated": "2011-12-14T00:46:24.534Z",
-	 * "dateExpires": "2020-01-01T00:00:00.000Z",
-	 * "permissions": [{
-	 *    "idModel": "*",
-	 *    "modelType": "*",
-	 *    "read": true,
-	 *    "write": false
-	 * }]
-	 * }
-	 * 
-	 * </code>
-	 */
+    String idMember;
 
-	String idMember;
+    Date dateCreated;
 
-	/** The date created. */
-	Date dateCreated;
+    Date dateExpires;
 
-	/** The date expires. */
-	Date dateExpires;
+    java.util.List<Permission> permissions;
 
-	/** The permissions. */
-	java.util.List<Permission> permissions;
+    public String getIdMember() {
+        return idMember;
+    }
 
-	/**
-	 * Gets the id member.
-	 * 
-	 * @return the id member
-	 */
-	public String getIdMember() {
-		return idMember;
-	}
+    public void setIdMember(String idMember) {
+        this.idMember = idMember;
+    }
 
-	/**
-	 * Sets the id member.
-	 * 
-	 * @param idMember
-	 *            the new id member
-	 */
-	public void setIdMember(String idMember) {
-		this.idMember = idMember;
-	}
+    public Date getDateCreated() {
+        return dateCreated;
+    }
 
-	/**
-	 * Gets the date created.
-	 * 
-	 * @return the date created
-	 */
-	public Date getDateCreated() {
-		return dateCreated;
-	}
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
 
-	/**
-	 * Sets the date created.
-	 * 
-	 * @param dateCreated
-	 *            the new date created
-	 */
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
-	}
+    public Date getDateExpires() {
+        return dateExpires;
+    }
 
-	/**
-	 * Gets the date expires.
-	 * 
-	 * @return the date expires
-	 */
-	public Date getDateExpires() {
-		return dateExpires;
-	}
+    public void setDateExpires(Date dateExpires) {
+        this.dateExpires = dateExpires;
+    }
 
-	/**
-	 * Sets the date expires.
-	 * 
-	 * @param dateExpires
-	 *            the new date expires
-	 */
-	public void setDateExpires(Date dateExpires) {
-		this.dateExpires = dateExpires;
-	}
+    public class Permission {
 
-	/**
-	 * The Class Permission.
-	 */
-	public class Permission {
+        public String getIdModel() {
+            return idModel;
+        }
 
-		/**
-		 * Gets the id model.
-		 * 
-		 * @return the id model
-		 */
-		public String getIdModel() {
-			return idModel;
-		}
+        public void setIdModel(String idModel) {
+            this.idModel = idModel;
+        }
 
-		/**
-		 * Sets the id model.
-		 * 
-		 * @param idModel
-		 *            the new id model
-		 */
-		public void setIdModel(String idModel) {
-			this.idModel = idModel;
-		}
+        public String getModelType() {
+            return modelType;
+        }
 
-		/**
-		 * Gets the model type.
-		 * 
-		 * @return the model type
-		 */
-		public String getModelType() {
-			return modelType;
-		}
+        public void setModelType(String modelType) {
+            this.modelType = modelType;
+        }
 
-		/**
-		 * Sets the model type.
-		 * 
-		 * @param modelType
-		 *            the new model type
-		 */
-		public void setModelType(String modelType) {
-			this.modelType = modelType;
-		}
+        public boolean isRead() {
+            return read;
+        }
 
-		/**
-		 * Checks if is read.
-		 * 
-		 * @return true, if is read
-		 */
-		public boolean isRead() {
-			return read;
-		}
+        public void setRead(boolean read) {
+            this.read = read;
+        }
 
-		/**
-		 * Sets the read.
-		 * 
-		 * @param read
-		 *            the new read
-		 */
-		public void setRead(boolean read) {
-			this.read = read;
-		}
+        public boolean isWrite() {
+            return write;
+        }
 
-		/**
-		 * Checks if is write.
-		 * 
-		 * @return true, if is write
-		 */
-		public boolean isWrite() {
-			return write;
-		}
+        public void setWrite(boolean write) {
+            this.write = write;
+        }
 
-		/**
-		 * Sets the write.
-		 * 
-		 * @param write
-		 *            the new write
-		 */
-		public void setWrite(boolean write) {
-			this.write = write;
-		}
+        String idModel;
 
-		/** The id model. */
-		String idModel;
+        String modelType;
 
-		/** The model type. */
-		String modelType;
+        boolean read;
 
-		/** The read. */
-		boolean read;
-
-		/** The write. */
-		boolean write;
-	}
+        boolean write;
+    }
 }
