@@ -5,12 +5,12 @@ import java.net.URL;
 import java.util.List;
 
 import org.trello4j.model.Action;
+import org.trello4j.model.Attachment;
 import org.trello4j.model.Board;
 import org.trello4j.model.Card;
-import org.trello4j.model.Card.Attachment;
-import org.trello4j.model.Card.Label;
+import org.trello4j.model.CheckItem;
 import org.trello4j.model.Checklist;
-import org.trello4j.model.Checklist.CheckItem;
+import org.trello4j.model.Label;
 import org.trello4j.model.Member;
 
 /**
