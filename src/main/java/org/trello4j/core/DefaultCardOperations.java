@@ -11,12 +11,12 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.io.FileSystemResource;
 import org.trello4j.TrelloURI;
 import org.trello4j.model.Action;
+import org.trello4j.model.Attachment;
 import org.trello4j.model.Board;
 import org.trello4j.model.Card;
-import org.trello4j.model.Card.Attachment;
-import org.trello4j.model.Card.Label;
+import org.trello4j.model.CheckItem;
 import org.trello4j.model.Checklist;
-import org.trello4j.model.Checklist.CheckItem;
+import org.trello4j.model.Label;
 import org.trello4j.model.Member;
 
 public class DefaultCardOperations extends AbstractOperations implements CardOperations {
