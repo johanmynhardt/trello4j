@@ -1,141 +1,141 @@
 package org.trello4j.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Action {
 
-	private String idMemberCreator;
-	private String type;
-	private Date date;
-	private Member memberCreator;
-	private Data data;
+    private String idMemberCreator;
+    private String type;
+    private Date date;
+    private Member memberCreator;
+    private Data data;
 
-	private String id;
+    private String id;
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	@Override
-	public String toString() {
-		return new StringBuilder(getClass().getSimpleName()).append(" ").append(id).toString();
-	}
+    @Override
+    public String toString() {
+        return new StringBuilder(getClass().getSimpleName()).append(" ").append(id).toString();
+    }
 
-	public String getIdMemberCreator() {
-		return idMemberCreator;
-	}
+    public String getIdMemberCreator() {
+        return idMemberCreator;
+    }
 
-	public void setIdMemberCreator(String idMemberCreator) {
-		this.idMemberCreator = idMemberCreator;
-	}
+    public void setIdMemberCreator(String idMemberCreator) {
+        this.idMemberCreator = idMemberCreator;
+    }
 
-	public String getType() {
-		return type;
-	}
+    public String getType() {
+        return type;
+    }
 
-	public void setType(String type) {
-		this.type = type;
-	}
+    public void setType(String type) {
+        this.type = type;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public Member getMemberCreator() {
-		return memberCreator;
-	}
+    public Member getMemberCreator() {
+        return memberCreator;
+    }
 
-	public void setMemberCreator(Member memberCreator) {
-		this.memberCreator = memberCreator;
-	}
+    public void setMemberCreator(Member memberCreator) {
+        this.memberCreator = memberCreator;
+    }
 
-	public Data getData() {
-		return data;
-	}
+    public Data getData() {
+        return data;
+    }
 
-	public void setData(Data data) {
-		this.data = data;
-	}
+    public void setData(Data data) {
+        this.data = data;
+    }
 
-	@JsonIgnoreProperties(ignoreUnknown = true)
-	public class Data {
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public class Data {
 
-		private String dateLastEdited;
-		private String text;
-		private Board board;
-		private Card card;
+        private String dateLastEdited;
+        private String text;
+        private Board board;
+        private Card card;
 
-		public String getDateLastEdited() {
-			return dateLastEdited;
-		}
+        public String getDateLastEdited() {
+            return dateLastEdited;
+        }
 
-		public void setDateLastEdited(String dateLastEdited) {
-			this.dateLastEdited = dateLastEdited;
-		}
+        public void setDateLastEdited(String dateLastEdited) {
+            this.dateLastEdited = dateLastEdited;
+        }
 
-		public String getText() {
-			return text;
-		}
+        public String getText() {
+            return text;
+        }
 
-		public void setText(String text) {
-			this.text = text;
-		}
+        public void setText(String text) {
+            this.text = text;
+        }
 
-		public Board getBoard() {
-			return board;
-		}
+        public Board getBoard() {
+            return board;
+        }
 
-		public void setBoard(Board board) {
-			this.board = board;
-		}
+        public void setBoard(Board board) {
+            this.board = board;
+        }
 
-		public Card getCard() {
-			return card;
-		}
+        public Card getCard() {
+            return card;
+        }
 
-		public void setCard(Card card) {
-			this.card = card;
-		}
-	}
+        public void setCard(Card card) {
+            this.card = card;
+        }
+    }
 
-	public static class TYPE {
+    public static class TYPE {
 
-		public static final String CREATE_CARD = "createCard";
-		public static final String COMMENT_CARD = "commentCard";
-		public static final String UPDATE_CARD = "updateCard";
-		public static final String UPDATE_CARD_ID_LIST = "updateCard:idList";
-		public static final String UPDATE_CARD_CLOSED = "updateCard:closed";
-		public static final String UPDATE_CARD_DESC = "updateCard:desc";
-		public static final String UPDATE_CARD_NAME = "updateCard:name";
-		public static final String ADD_MEMBER_TO_CARD = "addMemberToCard";
-		public static final String REMOVE_MEMBER_FROM_CARD = "removeMemberFromCard";
-		public static final String UPDATE_CHECK_ITEM = "updateCheckItemStateOnCard";
-		public static final String ADD_ATTACHMENT = "addAttachmentToCard";
-		public static final String REMOVE_ATTACHMENT = "removeAttachmentFromCard";
-		public static final String ADD_CHECKLIST = "addChecklistToCard";
-		public static final String REMOVE_CHECKLIST = "removeChecklistFromCard";
-		public static final String CREATE_LIST = "createList";
-		public static final String UPDATE_LIST = "updateList";
-		public static final String CREATE_BOARD = "createBoard";
-		public static final String UPDATE_BOARD = "updateBoard";
-		public static final String ADD_MEMBER_TO_BOARD = "addMemberToBoard";
-		public static final String REMOVE_MEMBER_FROM_BOARD = "removeMemberFromBoard";
-		public static final String ADD_TO_ORGANIZATION_BOARD = "addToOrganizationBoard";
-		public static final String REMOVE_FROM_ORGANIZATION_BOARD = "removeFromOrganizationBoard";
-		public static final String CREATE_ORGANIZATION = "createOrganization";
-		public static final String UPDATE_ORGANIZATION = "updateOrganization";
+        public static final String CREATE_CARD = "createCard";
+        public static final String COMMENT_CARD = "commentCard";
+        public static final String UPDATE_CARD = "updateCard";
+        public static final String UPDATE_CARD_ID_LIST = "updateCard:idList";
+        public static final String UPDATE_CARD_CLOSED = "updateCard:closed";
+        public static final String UPDATE_CARD_DESC = "updateCard:desc";
+        public static final String UPDATE_CARD_NAME = "updateCard:name";
+        public static final String ADD_MEMBER_TO_CARD = "addMemberToCard";
+        public static final String REMOVE_MEMBER_FROM_CARD = "removeMemberFromCard";
+        public static final String UPDATE_CHECK_ITEM = "updateCheckItemStateOnCard";
+        public static final String ADD_ATTACHMENT = "addAttachmentToCard";
+        public static final String REMOVE_ATTACHMENT = "removeAttachmentFromCard";
+        public static final String ADD_CHECKLIST = "addChecklistToCard";
+        public static final String REMOVE_CHECKLIST = "removeChecklistFromCard";
+        public static final String CREATE_LIST = "createList";
+        public static final String UPDATE_LIST = "updateList";
+        public static final String CREATE_BOARD = "createBoard";
+        public static final String UPDATE_BOARD = "updateBoard";
+        public static final String ADD_MEMBER_TO_BOARD = "addMemberToBoard";
+        public static final String REMOVE_MEMBER_FROM_BOARD = "removeMemberFromBoard";
+        public static final String ADD_TO_ORGANIZATION_BOARD = "addToOrganizationBoard";
+        public static final String REMOVE_FROM_ORGANIZATION_BOARD = "removeFromOrganizationBoard";
+        public static final String CREATE_ORGANIZATION = "createOrganization";
+        public static final String UPDATE_ORGANIZATION = "updateOrganization";
 
-	}
+    }
 
 }
