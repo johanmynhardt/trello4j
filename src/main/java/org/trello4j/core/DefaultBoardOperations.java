@@ -1,6 +1,8 @@
 package org.trello4j.core;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.trello4j.TrelloURI;
@@ -38,10 +40,11 @@ public class DefaultBoardOperations extends AbstractOperations implements BoardO
 
     @Override
     public List<Card> getCards(final String... filters) {
+        Map<String, Boolean> keyValueMap = Collections.singletonMap("attachments", true);
         TrelloURI uri = getTrelloAccessor().createTrelloUri(TrelloURI.BOARD_CARDS_URL, boardId).filter(filters);
         ParameterizedTypeReference<List<Card>> typeReference = new ParameterizedTypeReference<List<Card>>() {
         };
-        return getTrelloAccessor().doGet(uri.build(), typeReference);
+        return getTrelloAccessor().doGet(uri.build(), keyValueMap, typeReference);
     }
 
     @Override
