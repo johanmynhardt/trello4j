@@ -19,16 +19,13 @@ import org.trello4j.core.CardOperations;
 import org.trello4j.core.ListOperations;
 import org.trello4j.core.TrelloTemplate;
 import org.trello4j.model.Action;
+import org.trello4j.model.Attachment;
 import org.trello4j.model.Card;
-import org.trello4j.model.Card.Attachment;
-import org.trello4j.model.Card.Label;
 import org.trello4j.model.Checklist;
+import org.trello4j.model.Label;
 import org.trello4j.model.Member;
 
 public class CardServiceTest {
-
-    // Note: this url was used to generate token with read, write permissions:
-    // https://trello.com/1/authorize?key=23ec668887f03d4c71c7f74fb0ae30a4&name=My+Application&expiration=never&response_type=token&scope=read,write
 
     private static final String USER = "guuilp";
     private static final String API_KEY = "b8a19fea9c86c56f92b47ba9841826c7";
@@ -237,7 +234,7 @@ public class CardServiceTest {
             cardOperations.setClosed(true);
 
             card = cardOperations.get();
-            assertTrue(card.isClosed());
+            assertTrue(card.getClosed());
         } finally {
             cardOperations.delete();
         }
@@ -289,6 +286,23 @@ public class CardServiceTest {
         // THEN
         assertTrue(deleted);
     }
+
+    // @Test
+    // public void getCard() {
+    // TrelloTemplate trello = new TrelloTemplate(API_KEY, API_TOKEN);
+    //
+    // // GIVEN
+    //
+    // // PREPARATION
+    // Card card = trello.boundCardOperations(CARD_ID).get();
+    //
+    // // WHEN
+    // boolean deleted =
+    // trello.boundCardOperations(CARD_ID).deleteLabel("5830d2e384e677fd36663aaf");
+    //
+    // // THEN
+    // assertTrue(deleted);
+    // }
 
     @Test
     public void deleteMemberFromCard() throws IOException {
