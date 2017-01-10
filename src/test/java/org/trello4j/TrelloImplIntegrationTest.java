@@ -193,7 +193,7 @@ public class TrelloImplIntegrationTest {
         // THEN
         assertNotNull("Oops, card is null", card);
         assertEquals("Card id should be equal", CARD_ID, card.getId());
-        assertNotNull(card.getDateLastActivity().getTime());
+        assertNotNull(card.getDateLastActivity());
 
     }
 
