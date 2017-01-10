@@ -1,11 +1,14 @@
 package org.trello4j.model;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.annotation.*;
-import org.trello4j.model.TrelloType.*;
+import java.io.IOException;
 
-import java.io.*;
+import org.trello4j.model.TrelloType.TrelloTypeJsonDeserializer;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
  * Created with IntelliJ IDEA. User: Joel Soderstrom
@@ -14,32 +17,27 @@ import java.io.*;
 @JsonDeserialize(using = TrelloTypeJsonDeserializer.class)
 public enum TrelloType {
 
-	ORGANIZATION,
-	ACTION,
-	BOARD,
-	CHECKLIST,
-	LIST,
-	MEMBER,
-	NOTIFICATION,
-	UNKNOWN;
+    ORGANIZATION, ACTION, BOARD, CHECKLIST, LIST, MEMBER, NOTIFICATION, UNKNOWN;
 
-	private TrelloType() {
-	}
+    private TrelloType() {
+    }
 
-	public static TrelloType fromString(String str) {
-		TrelloType type = TrelloType.UNKNOWN;
-		try {
-			type = TrelloType.valueOf(str.toUpperCase());
-		} catch (Exception e) {
-			// do nothing
-		}
-		return type;
-	}
+    public static TrelloType fromString(String str) {
+        TrelloType type = TrelloType.UNKNOWN;
+        try {
+            type = TrelloType.valueOf(str.toUpperCase());
+        } catch (Exception e) {
+            // do nothing
+        }
+        return type;
+    }
 
-	public static class TrelloTypeJsonDeserializer extends JsonDeserializer<TrelloType> {
-		public TrelloType deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-			String str = jp.getValueAsString();
-			return fromString(str);
-		}
-	}
+    public static class TrelloTypeJsonDeserializer extends JsonDeserializer<TrelloType> {
+        @Override
+        public TrelloType deserialize(JsonParser jp, DeserializationContext ctxt)
+                throws IOException, JsonProcessingException {
+            String str = jp.getValueAsString();
+            return fromString(str);
+        }
+    }
 }
