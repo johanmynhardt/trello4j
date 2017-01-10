@@ -1,95 +1,64 @@
 package org.trello4j.model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-/**
- * A Trello checklist.
- * 
- * <code>
- *  {
- *    "id":"4f92b89ea73738db6cdd4ed7",
- *    "name":"Checklist",
- *    "idBoard":"4f92b80ba73738db6cdd4309",
- *    "checkItems":[
- *      {
- *        "id":"4f92b97cf9e2e2ae362df9ab",
- *        "name":"Base for filtering",
- *        "type":"check",
- *        "pos":8588
- *      },
- *      {
- *        "id":"4f92b99b5c92e5cd28006ee8",
- *        "name":"GET /1/boards/[board_id]/actions?filter",
- *        "type":"check",
- *        "pos":12882
- *       }
- *    ]
- *  }
- * </code>
- * 
- */
 public class Checklist extends TrelloObject {
 
-	private String name;
+    private String name;
+    private String idBoard;
+    private String idCard;
+    private Integer pos;
+    private List<CheckItem> checkItems = null;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	private String idBoard;
+    public String getName() {
+        return name;
+    }
 
-	private java.util.List<CheckItem> checkItems = new ArrayList<CheckItem>();
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getIdBoard() {
+        return idBoard;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setIdBoard(String idBoard) {
+        this.idBoard = idBoard;
+    }
 
-	public String getIdBoard() {
-		return idBoard;
-	}
+    public String getIdCard() {
+        return idCard;
+    }
 
-	public void setIdBoard(String idBoard) {
-		this.idBoard = idBoard;
-	}
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
 
-	public List<CheckItem> getCheckItems() {
-		return checkItems;
-	}
+    public Integer getPos() {
+        return pos;
+    }
 
-	public void setCheckItems(List<CheckItem> checkItems) {
-		this.checkItems = checkItems;
-	}
+    public void setPos(Integer pos) {
+        this.pos = pos;
+    }
 
-	public static class CheckItem extends TrelloObject {
+    public List<CheckItem> getCheckItems() {
+        return checkItems;
+    }
 
-		private String name;
-        private String type;
-        private double pos;
+    public void setCheckItems(List<CheckItem> checkItems) {
+        this.checkItems = checkItems;
+    }
 
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-        public String getName() {
-			return name;
-		}
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getType() {
-			return type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-
-        public double getPos() {
-			return pos;
-		}
-
-		public void setPos(double pos) {
-			this.pos = pos;
-		}
-	}
 }
