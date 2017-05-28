@@ -6,3 +6,4 @@ target
 *.iml
 .idea
 src/test/resources/cardservice.properties
+pom_travis.xml

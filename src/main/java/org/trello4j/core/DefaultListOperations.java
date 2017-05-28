@@ -26,29 +26,6 @@ public class DefaultListOperations extends AbstractOperations implements ListOpe
 		return getTrelloAccessor().doGet(uri.build(), org.trello4j.model.List.class);
 	}
 
-	/**
-	 * @param name
-	 *            (required)
-	 * @param desc
-	 *            (optional)
-	 * @param due
-	 *            (required - Valid Values: A date, or null)
-	 * @param pos
-	 *            (optional - Default: bottom; Valid Values: A position. top,
-	 *            bottom, or a positive number.)
-	 * @param label
-	 *            (optional - Valid Values: Green, yellow, orange, red, purple)
-	 * @param cardSource
-	 *            (optional - Valid Values: The id of the card to copy into a
-	 *            new card.)
-	 * @param memberId
-	 *            (optional - Valid Values: A comma-separated list of objectIds,
-	 *            24-character hex strings)
-	 * @param keepFromSource
-	 *            (optional - Default: all; Valid Values: Properties of the card
-	 *            to copy over from the source.)
-	 * @return
-	 */
 	@Override
 	public Card createCard(String name, String desc, String due, String pos, String labels, String memberId, String cardSourceId, String keepFromSource) {
 		validateNotNull(name);

@@ -1,64 +1,64 @@
+
 package org.trello4j.model;
 
-/**
- * <code>
- * {
- * 	"id":"4e7b86d7ce194786721560b8",
- * 	"name":"Known Issues",
- * 	"closed":false,
- * 	"idBoard":"4d5ea62fd76aa1136000000c",
- * 	"pos":9408.2119140625
- * }
- * </code>
- * 
- * @author joel
- * 
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class List extends TrelloObject {
 
-	private String name;
-	private boolean closed;
-	private String boardId;
-	private double pos;
-	private boolean subscribed;
+    private String name;
+    private Boolean closed;
+    private String idBoard;
+    private Integer pos;
+    private Boolean subscribed;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public boolean isClosed() {
-		return closed;
-	}
+    public Boolean getClosed() {
+        return closed;
+    }
 
-	public void setClosed(boolean closed) {
-		this.closed = closed;
-	}
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
 
-	public String getBoardId() {
-		return boardId;
-	}
+    public String getIdBoard() {
+        return idBoard;
+    }
 
-	public void setBoardId(String boardId) {
-		this.boardId = boardId;
-	}
+    public void setIdBoard(String idBoard) {
+        this.idBoard = idBoard;
+    }
 
-	public double getPos() {
-		return pos;
-	}
+    public Integer getPos() {
+        return pos;
+    }
 
-	public void setPos(double pos) {
-		this.pos = pos;
-	}
+    public void setPos(Integer pos) {
+        this.pos = pos;
+    }
 
-	public boolean isSubscribed() {
-		return subscribed;
-	}
+    public Boolean getSubscribed() {
+        return subscribed;
+    }
 
-	public void setSubscribed(boolean subscribed) {
-		this.subscribed = subscribed;
-	}
+    public void setSubscribed(Boolean subscribed) {
+        this.subscribed = subscribed;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
 }

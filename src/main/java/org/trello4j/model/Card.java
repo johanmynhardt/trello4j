@@ -1,204 +1,288 @@
 package org.trello4j.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Card extends TrelloObject {
 
-	// TODO: idChecklists
-	// TODO: checkItemStates
-	// TODO: badges
+    private Badges badges;
+    private java.util.List<CheckItemState> checkItemStates = null;
+    private Boolean closed;
+    private Boolean dueComplete;
+    private String dateLastActivity;
+    private String desc;
+    private Object descData;
+    private String due;
+    private Object email;
+    private String idBoard;
+    private java.util.List<String> idChecklists = null;
+    private String idList;
+    private java.util.List<String> idMembers = null;
+    private java.util.List<String> idMembersVoted = null;
+    private Integer idShort;
+    private String idAttachmentCover;
+    private Boolean manualCoverAttachment;
+    private java.util.List<Label> labels = null;
+    private java.util.List<String> idLabels = null;
+    private String name;
+    private Integer pos;
+    private String shortLink;
+    private String shortUrl;
+    private Boolean subscribed;
+    private String url;
+    private java.util.List<Attachment> attachments = null;
+    private java.util.List<Member> members = null;
+    private Board board;
+    private org.trello4j.model.List list;
+    private java.util.List<Checklist> checklists = null;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-	private String name;
-	private String desc;
-	private boolean closed;
-	private Long idShort;
-	private String idList;
-	private String idBoard;
-	private List<String> idMembers;
-	private List<Attachment> attachments;
-	private List<Label> labels;
-	private String url;
-	private double pos;
-	private Date dateLastActivity;
+    public Badges getBadges() {
+        return badges;
+    }
+
+    public void setBadges(Badges badges) {
+        this.badges = badges;
+    }
+
+    public java.util.List<CheckItemState> getCheckItemStates() {
+        return checkItemStates;
+    }
+
+    public void setCheckItemStates(java.util.List<CheckItemState> checkItemStates) {
+        this.checkItemStates = checkItemStates;
+    }
+
+    public Boolean getClosed() {
+        return closed;
+    }
+
+    public void setClosed(Boolean closed) {
+        this.closed = closed;
+    }
+
+    public Boolean getDueComplete() {
+        return dueComplete;
+    }
+
+    public void setDueComplete(Boolean dueComplete) {
+        this.dueComplete = dueComplete;
+    }
+
+    public String getDateLastActivity() {
+        return dateLastActivity;
+    }
+
+    public void setDateLastActivity(String dateLastActivity) {
+        this.dateLastActivity = dateLastActivity;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public Object getDescData() {
+        return descData;
+    }
+
+    public void setDescData(Object descData) {
+        this.descData = descData;
+    }
+
+    public String getDue() {
+        return due;
+    }
+
+    public void setDue(String due) {
+        this.due = due;
+    }
+
+    public Object getEmail() {
+        return email;
+    }
+
+    public void setEmail(Object email) {
+        this.email = email;
+    }
+
+    public String getIdBoard() {
+        return idBoard;
+    }
+
+    public void setIdBoard(String idBoard) {
+        this.idBoard = idBoard;
+    }
+
+    public java.util.List<String> getIdChecklists() {
+        return idChecklists;
+    }
+
+    public void setIdChecklists(java.util.List<String> idChecklists) {
+        this.idChecklists = idChecklists;
+    }
+
+    public String getIdList() {
+        return idList;
+    }
+
+    public void setIdList(String idList) {
+        this.idList = idList;
+    }
+
+    public java.util.List<String> getIdMembers() {
+        return idMembers;
+    }
+
+    public void setIdMembers(java.util.List<String> idMembers) {
+        this.idMembers = idMembers;
+    }
+
+    public java.util.List<String> getIdMembersVoted() {
+        return idMembersVoted;
+    }
+
+    public void setIdMembersVoted(java.util.List<String> idMembersVoted) {
+        this.idMembersVoted = idMembersVoted;
+    }
+
+    public Integer getIdShort() {
+        return idShort;
+    }
+
+    public void setIdShort(Integer idShort) {
+        this.idShort = idShort;
+    }
+
+    public String getIdAttachmentCover() {
+        return idAttachmentCover;
+    }
+
+    public void setIdAttachmentCover(String idAttachmentCover) {
+        this.idAttachmentCover = idAttachmentCover;
+    }
+
+    public Boolean getManualCoverAttachment() {
+        return manualCoverAttachment;
+    }
+
+    public void setManualCoverAttachment(Boolean manualCoverAttachment) {
+        this.manualCoverAttachment = manualCoverAttachment;
+    }
+
+    public java.util.List<Label> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(java.util.List<Label> labels) {
+        this.labels = labels;
+    }
+
+    public java.util.List<String> getIdLabels() {
+        return idLabels;
+    }
+
+    public void setIdLabels(java.util.List<String> idLabels) {
+        this.idLabels = idLabels;
+    }
 
     public String getName() {
-		return name;
-	}
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getDesc() {
-		return desc;
-	}
+    public Integer getPos() {
+        return pos;
+    }
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
+    public void setPos(Integer pos) {
+        this.pos = pos;
+    }
 
-	public boolean isClosed() {
-		return closed;
-	}
+    public String getShortLink() {
+        return shortLink;
+    }
 
-	public void setClosed(boolean closed) {
-		this.closed = closed;
-	}
+    public void setShortLink(String shortLink) {
+        this.shortLink = shortLink;
+    }
 
-	public Long getIdShort() {
-		return idShort;
-	}
+    public String getShortUrl() {
+        return shortUrl;
+    }
 
-	public void setIdShort(Long idShort) {
-		this.idShort = idShort;
-	}
+    public void setShortUrl(String shortUrl) {
+        this.shortUrl = shortUrl;
+    }
 
-	public String getIdList() {
-		return idList;
-	}
+    public Boolean getSubscribed() {
+        return subscribed;
+    }
 
-	public void setIdList(String idList) {
-		this.idList = idList;
-	}
+    public void setSubscribed(Boolean subscribed) {
+        this.subscribed = subscribed;
+    }
 
-	public String getIdBoard() {
-		return idBoard;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setIdBoard(String idBoard) {
-		this.idBoard = idBoard;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public List<String> getIdMembers() {
-		return idMembers;
-	}
+    public java.util.List<Attachment> getAttachments() {
+        return attachments;
+    }
 
-	public void setIdMembers(List<String> idMembers) {
-		this.idMembers = idMembers;
-	}
+    public void setAttachments(java.util.List<Attachment> attachments) {
+        this.attachments = attachments;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public java.util.List<Member> getMembers() {
+        return members;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setMembers(java.util.List<Member> members) {
+        this.members = members;
+    }
 
-	public double getPos() {
-		return pos;
-	}
+    public Board getBoard() {
+        return board;
+    }
 
-	public void setPos(double pos) {
-		this.pos = pos;
-	}
+    public void setBoard(Board board) {
+        this.board = board;
+    }
 
-	public Date getDateLastActivity() {
-		return dateLastActivity;
-	}
+    public org.trello4j.model.List getList() {
+        return list;
+    }
 
-	public void setDateLastActivity(Date dateLastActivity) {
-		this.dateLastActivity = dateLastActivity;
-	}
+    public void setList(org.trello4j.model.List list) {
+        this.list = list;
+    }
 
-	public List<Attachment> getAttachments() {
-		return attachments;
-	}
+    public java.util.List<Checklist> getChecklists() {
+        return checklists;
+    }
 
-	public void setAttachments(List<Attachment> attachments) {
-		this.attachments = attachments;
-	}
+    public void setChecklists(java.util.List<Checklist> checklists) {
+        this.checklists = checklists;
+    }
 
-	public List<Label> getLabels() {
-		return labels;
-	}
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-	public void setLabels(List<Label> labels) {
-		this.labels = labels;
-	}
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
-	@JsonIgnoreProperties(ignoreUnknown = true)
-	public static class Attachment {
-
-		private String _id;
-		private String bytes;
-		private Date date;
-		private String url;
-		private String name;
-		private String idMember;
-
-		public String get_id() {
-			return _id;
-		}
-
-		public void set_id(String _id) {
-			this._id = _id;
-		}
-
-		public String getBytes() {
-			return bytes;
-		}
-
-		public void setBytes(String bytes) {
-			this.bytes = bytes;
-		}
-
-		public Date getDate() {
-			return date;
-		}
-
-		public void setDate(Date date) {
-			this.date = date;
-		}
-
-		public String getUrl() {
-			return url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getIdMember() {
-			return idMember;
-		}
-
-		public void setIdMember(String idMember) {
-			this.idMember = idMember;
-		}
-	}
-
-	@JsonIgnoreProperties(ignoreUnknown = true)
-	public static class Label {
-
-		private String color;
-		private String name;
-
-		public String getColor() {
-			return color;
-		}
-
-		public void setColor(String color) {
-			this.color = color;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
 }
